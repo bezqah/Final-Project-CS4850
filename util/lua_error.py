@@ -1,4 +1,4 @@
-class PLp1Error(Exception):
+class LuaError(Exception):
     def __init__(self, message=None, cause=None):
         if cause is not None:
             super().__init__(message)
