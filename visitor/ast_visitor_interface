@@ -1,0 +1,99 @@
+from abc import ABC, abstractmethod
+from typing import TYPE_CHECKING
+from util.lua_error import LuaError
+
+if TYPE_CHECKING:
+    from ast.argument_list_node import ArgumentListNode
+    from ast.assign_node import AssignNode
+    from ast.body_node import BodyNode
+    from ast.boolean_node import BooleanNode
+    from ast.call_node import CallNode
+    from ast.function_definition_node import FunctionDefinitionNode
+    from ast.float_node import FloatNode
+    from ast.if_node import IfNode
+    from ast.integer_node import IntegerNode
+    from ast.list_node import ListNode
+    from ast.create_node import CreateNode
+    from ast.string_node import StringNode
+    from ast.var_ref_node import VarRefNode
+    from ast.add_node import AddNode
+    from ast.sub_node import SubNode
+    from ast.multiply_node import MultiplyNode
+    from ast.divide_node import DivideNode
+    from ast.not_node import NotNode
+    from ast.or_node import OrNode
+    from ast.and_node import AndNode
+    from ast.equal_node import EqualNode
+    from ast.not_equal_node import NotEqualNode
+    from ast.less_node import LessNode
+    from ast.less_equal_node import LessEqualNode
+    from ast.greater_node import GreaterNode
+    from ast.greater_equal_node import GreaterEqualNode
+    from ast.paren_node import ParenNode
+    from ast.parameter_list_node import ParameterListNode
+    from ast.instance_variable_list_node import InstanceVariableListNode
+    from ast.method_list_node import MethodListNode
+    from ast.var_def_node import VarDefNode
+
+class Visitor(ABC):
+
+    @abstractmethod
+    def visit(self, n: "ArgumentListNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "AssignNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "BodyNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "BooleanNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "CallNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "FunctionDefinitionNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "FloatNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "IfNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "IntegerNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "ListNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "CreateNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "StringNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "VarRefNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "AddNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "SubNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "MultiplyNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "DivideNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "NotNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "OrNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "AndNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "EqualNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "NotEqualNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "LessNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "LessEqualNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "GreaterNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "GreaterEqualNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "ParenNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "ParameterListNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "InstanceVariableListNode"): raise LuaError()
+    @abstractmethod
+    def visit(self, n: "VarDefNode"): raise LuaError()

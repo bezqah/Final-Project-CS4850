@@ -36,7 +36,7 @@ class EvalVisitor(Visitor):
                 return v.get_int()
             if isinstance(v, FloatValue):
                 return v.getFloat()
-            raise PLp1Error(f"Incompatible types: {v}")
+            raise LuaError(f"Incompatible types: {v}")
 
         try:
             left_val = to_number(lop)
@@ -44,7 +44,7 @@ class EvalVisitor(Visitor):
             result = cmp_fn(left_val, right_val)   # run comparison
             return self.value_factory.make_value(ValueType.BOOL).add_value(result)
         except Exception:
-            raise PLp1Error(f"Incompatible types: {lop} {symbol} {rop}")
+            raise LuaError(f"Incompatible types: {lop} {symbol} {rop}")
 
             
     def apply_numeric_op(self, lop, rop, op, symbol):
